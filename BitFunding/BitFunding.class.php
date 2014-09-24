@@ -28,29 +28,23 @@ class BitFunding {
                         $floor = '12.94409313';
                 }
 		// Stylesheet
-                $divStr = "<link rel=\"stylesheet\" href=\"/en/extensions/BitFunding/bitfunding.css\" /><div id=\"funding-goal\" style=\"visibility: hidden;\">$goal</div><div id=\"funding-address\" style=\"visibility: hidden;\">$fund</div><div id=\"funding-floor\" style=\"visibility: hidden;\">$floor</div>";
+                $divStr = "<link rel=\"stylesheet\" href=\"/en/extensions/BitFunding/bitfunding.css\" /><span id=\"funding-goal\" style=\"visibility: hidden;\">$goal</span><span id=\"funding-address\" style=\"visibility: hidden;\">$fund</span><span id=\"funding-floor\" style=\"visibility: hidden;\">$floor</span>";
 		// Html
-		$divStr .= "<div id=\"btc-api-warning\" class=\"alert alert-warning\" style=\"visibility: hidden;\">Display balance
+		$divStr .= "<span id=\"btc-api-warning\" class=\"alert alert-warning\" style=\"visibility: hidden;\">Display balance
 		    API error: refresh page
 		    or view balance on <a href=\"https://blockchain.info/address/$fund\"
 					  title=\"View on blockchain\" target=\"_blank\">blockchain.info <i
-			    class=\"fa fa-external-link fa-lg\"></i></a></div>
+			    class=\"fa fa-external-link fa-lg\"></i></a></span>
 		<div id=\"balance-container\">
-		    <noscript>
-			<div id=\"btc-api-success\" class=\"alert alert-success text-center\">
-			    Javascript is disabled in your browser, so check your balance directly on the <a
-				href=\"https://blockchain.info/address/$fund\"
-				title=\"View on blockchain\">blockchain</a>
-			</div>
-		    </noscript>
+		    <noscript>	<div id=\"btc-api-success\" class=\"alert alert-success text-center\">Javascript is disabled in your browser, so check your balance directly on the <a href=\"https://blockchain.info/address/$fund\" title=\"View on blockchain\">blockchain</a></div></noscript>
+		    <progress id=\"pbar\" class=\"determinate\" value=\"0\" max=\"86\"><span>0</span>%</progress> <span id='v' style=\"font-size: 4em;\">0%</span>
 		    <span id=\"btc-total-received\">?</span> of $goal BTC received <a href=\"#\" id=\"refresh-balance\" title=\"Refresh balance\"><i class=\"glyphicon glyphicon-refresh\">refresh</i></a>
 		    <br/>
 		    <span id=\"btc-total-remaining\">?</span> BTC remaining<br/>
 		    <span id=\"unconfirmed-container\">Receiving (unconfirmed)
 		    <span id=\"btc-unconfirmed-balance\">?</span> BTC</span>
-		    <br/>
+		    </div>";
 
-		    <progress id=\"pbar\" class=\"determinate\" value=\"0\" max=\"86\"><span>0</span>%</progress><span id='v' style=\"font-size: 4em;\">0%</span></div>";
 		// Show address link
 		if ($params['showaddress']) {
                 	$divStr .= "<h4>Donation Address <a href=\"bitcoin:$fund\" title=\"Open link in wallet\">$fund</a>&nbsp;

@@ -1,0 +1,31 @@
+BitFunding
+------------------------
+
+Mediawiki extension for managing crowdfunders from MediaWiki.
+
+
+== Syntax ==
+
+<bitfunding showaddress="yes" goal="88" fund="31oSGBBNrpCiENH3XMZpiP6GTC4tad4bMy" floor="12.94409313">
+</bitfunding>
+
+
+showaddress: if set makes the plugin output a link to the address at the bottom of the fundraiser.
+goal: set the goal for the crowdfunding.
+fund: address for the fund where incoming coins are monitored.
+floor: starting amount in the account, in case this was not 0 when starting the crowdfunding.
+
+== Installing ==
+
+Copy the BitFunding folder to your mediawiki extensions folder.
+
+Add the following at the bottom of your LocalSettings.php:
+
+require_once( "extensions/BitFunding/BitFunding.php" );
+
+
+== Credits ==
+
+by btcdrak and caedes
+
+

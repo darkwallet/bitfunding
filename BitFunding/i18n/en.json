@@ -1,0 +1,6 @@
+{
+    "@metadata": {
+        "authors": ['btcdrak', 'caedes']
+    },
+    "funding-desc": "Adds <code>&lt;crowdfunding&gt;</code> progress bar and amounts to keep track of your crypto fund raisers."
+}
